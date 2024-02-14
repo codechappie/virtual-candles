@@ -60,17 +60,17 @@ function App() {
             const positiveDb = (dB > 0 ? dB : dB * -1).toFixed(0);
 
             if (positiveDb < 50) {
-              decibelMeter.textContent = 'NAADDA';
+              decibelMeter.textContent = 'NAADDA', positiveDb;
               setAction("nada")
             }
 
             if (positiveDb < 40 && positiveDb > 30) {
-              decibelMeter.textContent = 'Soplando...';
+              decibelMeter.textContent = 'Soplando...', positiveDb;
               setAction("soplando")
             }
 
             if (positiveDb < 29) {
-              decibelMeter.textContent = 'APAGADO';
+              decibelMeter.textContent = 'APAGADO', positiveDb;
               setAction("apagado");
 
 
