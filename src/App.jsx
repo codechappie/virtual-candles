@@ -62,12 +62,12 @@ function App() {
             // Verificar si se supera el umbral para detener la escucha
             const positiveDb = (dB > 0 ? dB : dB * -1).toFixed(0);
 
-            if (positiveDb < 121) {
+            if (positiveDb < 91) {
               decibelMeter.textContent = 'NAADDA', positiveDb;
               setAction("nada")
             }
 
-            if (positiveDb < 120 && positiveDb > 50) {
+            if (positiveDb < 90 && positiveDb > 50) {
               decibelMeter.textContent = 'Soplando...', positiveDb;
               setAction("soplando")
             }
