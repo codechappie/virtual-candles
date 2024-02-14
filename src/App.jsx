@@ -17,7 +17,7 @@ function App() {
     const decibelValue = document.getElementById('decibel-value');
 
     // Establecer umbral para detener la escucha
-    const umbralDetenerEscucha = 100;
+    const umbralDetenerEscucha = 80;
 
     // Verificar compatibilidad con la API Web Audio
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
