@@ -58,10 +58,10 @@ function App() {
             // Actualizar la visualización
             decibelValue.textContent = dB.toFixed(2);
 
+            setDeci(dB)
             // Verificar si se supera el umbral para detener la escucha
             const positiveDb = (dB > 0 ? dB : dB * -1).toFixed(0);
 
-            setDeci(setDeci)
             if (positiveDb < 50) {
               decibelMeter.textContent = 'NAADDA', positiveDb;
               setAction("nada")
