@@ -8,6 +8,8 @@ const jsConfetti = new JSConfetti()
 function App() {
 
   const [action, setAction] = useState("apagado");
+  const [dec, setDeci] = useState(0);
+
   const audioRef = useRef(null);
 
 
@@ -59,6 +61,7 @@ function App() {
             // Verificar si se supera el umbral para detener la escucha
             const positiveDb = (dB > 0 ? dB : dB * -1).toFixed(0);
 
+            setDeci(setDeci)
             if (positiveDb < 50) {
               decibelMeter.textContent = 'NAADDA', positiveDb;
               setAction("nada")
@@ -109,7 +112,7 @@ function App() {
     <>
       <h1>{action}</h1>
       <div id="decibel-meter">Medidor de Decibelios: <span id="decibel-value">0</span> dB</div>
-
+      <h3>{dec}</h3>
       <div className="center">
         <div className={`holder ${action}`}>
           <div className="candle">
