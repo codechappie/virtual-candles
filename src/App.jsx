@@ -35,6 +35,7 @@ function App() {
 
           // Configurar la analización de audio
           analyser.fftSize = 256;
+
           const bufferLength = analyser.frequencyBinCount;
           const dataArray = new Uint8Array(bufferLength);
 
@@ -62,26 +63,27 @@ function App() {
             // Verificar si se supera el umbral para detener la escucha
             const positiveDb = (dB > 0 ? dB : dB * -1).toFixed(0);
 
-            if (positiveDb < 91) {
+            console.log(positiveDb)
+            if (positiveDb > 140) {
               decibelMeter.textContent = 'NAADDA', positiveDb;
               setAction("nada")
             }
 
-            if (positiveDb < 90 && positiveDb > 50) {
+            if (positiveDb < 140 && positiveDb > 70) {
               decibelMeter.textContent = 'Soplando...', positiveDb;
               setAction("soplando")
             }
 
-            if (positiveDb < 49) {
+            if (positiveDb < 70) {
               decibelMeter.textContent = 'APAGADO', positiveDb;
               setAction("apagado");
 
 
               // TODO: customize emojis to show
               return jsConfetti.addConfetti({
-                // emojis: ['😿'],
+                emojis: ['🎈', '🎉', '🥳'],
                 confettiNumber: 250,
-                emojiSize: 100,
+                emojiSize: 120,
               });
             }
 
@@ -103,8 +105,12 @@ function App() {
   }, [action]);
 
   const handleStart = () => {
-    // window.location.reload();
-    setAction("nada")
+    window.location.reload();
+    setAction("nada");
+  }
+
+  const playMusic = () => {
+
     audioRef.current.src = "/songs/feliz-cumpleanos-feliz-.mp3"
     audio.play();
   }
