@@ -1,0 +1,28 @@
+.modalContainer {
+    background: #000;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    transform: translateY(0);
+    transition: all ease-in-out 0.4s;
+
+    &.isOpen {
+        transform: translateY(100vh);
+        transition: all ease-in-out 0.4s;
+    }
+
+    .closeButton {
+        background: transparent;
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 10px;
+    }
+    .slider {
+        width: 100vw;
+    }
+
+    .wrapper {
+        padding: 40px;
+    }
+}
